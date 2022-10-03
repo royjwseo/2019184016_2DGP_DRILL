@@ -2,7 +2,7 @@ from pico2d import *
 
 import sys
 height=0
-TUK_WIDTH, TUK_HEIGHT = 800, 600
+TUK_WIDTH, TUK_HEIGHT = 1280, 1040
 def handle_events():
     # fill here
     global running
@@ -21,29 +21,29 @@ def handle_events():
 
                 dir += 1
             elif event.key == SDLK_LEFT:
-                height=0
+                height = 0
 
                 dir -= 1
             elif event.key == SDLK_UP:
-                if(height==0):
-                    height=2
-                elif(height==1):
-                    height =3
-
-                hir += 1
-            elif event.key == SDLK_DOWN:
                 if (height == 0):
                     height = 2
                 elif (height == 1):
                     height = 3
 
+                hir += 1
+            elif event.key == SDLK_DOWN:
+
+                if (height == 0):
+                    height = 2
+                elif (height == 1):
+                    height = 3
                 hir -= 1
             elif event.key == SDLK_ESCAPE:
 
                 running == False
         elif event.type == SDL_KEYUP:
             if event.key == SDLK_RIGHT:
-
+                
                 dir -= 1
             elif event.key == SDLK_LEFT:
 
